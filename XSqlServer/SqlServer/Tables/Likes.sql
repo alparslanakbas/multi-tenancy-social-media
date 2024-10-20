@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Likes]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [UserId] UNIQUEIDENTIFIER NOT NULL, 
+    [TweetId] UNIQUEIDENTIFIER NOT NULL, 
+    [CreatedDate] DATETIME NOT NULL, 
+    [ModifiedDate] DATETIME NULL, 
+    CONSTRAINT [FK_Likes_UserId] FOREIGN KEY (UserId) REFERENCES [Users](Id), 
+    CONSTRAINT [FK_Likes_TweetId] FOREIGN KEY (TweetId) REFERENCES [Users](Id),
+
+)

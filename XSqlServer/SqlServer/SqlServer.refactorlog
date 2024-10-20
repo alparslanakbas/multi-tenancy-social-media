@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="87c30dab-45ee-4217-9fab-7aeb22e744d9" ChangeDateTime="10/19/2024 19:59:48">
+    <Property Name="ElementName" Value="[dbo].[FK_Likes_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Likes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Likes_TweetId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="12ed58b8-f86a-4360-81f8-7c0e896a9faf" ChangeDateTime="10/19/2024 20:10:48">
+    <Property Name="ElementName" Value="[dbo].[FK_TenantMappings_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[TenantMappings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_TenantMappings_UserId]" />
+  </Operation>
+</Operations>
