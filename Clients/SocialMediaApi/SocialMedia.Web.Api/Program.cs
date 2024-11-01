@@ -1,10 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Web.Api.Infrastructure.MultiTenant.Extensions;
 using SocialMedia.Web.Api.Infrastructure.MultiTenant.Services;
+using SocialMedia.SqlServer.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMultiTenancy();
+
+builder.Services.AddInfraSqlServices(builder.Configuration.GetConnectionString("SqlServer"), (sp) =>
+{
+    var service = sp.GetRequiredService<IMultiTenantService>();
+    return service.GetUserId().ToString();
+});
 
 // Add services to the container.
 

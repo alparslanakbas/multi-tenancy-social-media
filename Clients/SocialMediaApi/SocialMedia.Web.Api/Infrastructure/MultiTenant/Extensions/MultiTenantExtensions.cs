@@ -3,6 +3,7 @@ using SocialMedia.Web.Api.Infrastructure.Middleware;
 using SocialMedia.Web.Api.Infrastructure.MultiTenant.Options;
 using SocialMedia.Web.Api.Infrastructure.MultiTenant.Resolvers;
 using SocialMedia.Web.Api.Infrastructure.MultiTenant.Services;
+using SocialMedia.Web.Api.Infrastructure.Services;
 
 namespace SocialMedia.Web.Api.Infrastructure.MultiTenant.Extensions
 {
@@ -13,6 +14,7 @@ namespace SocialMedia.Web.Api.Infrastructure.MultiTenant.Extensions
             services.AddHttpContextAccessor();
             services.AddSingleton<MultiTenantMiddleware>();
             services.AddScoped<IMultiTenantService, MultiTenantService>();
+            services.AddSingleton<ITenantMappingService, TenantMappingService>();
 
             var opt = new MultiTenancyOptions();
             action(opt);
